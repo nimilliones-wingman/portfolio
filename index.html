@@ -13,47 +13,54 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #eaeaea;
+            background: #f1f5f9;
+            color: #1e293b;
             line-height: 1.6;
             padding: 2rem 1.5rem;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
         }
         /* Header / Hero */
         header {
             text-align: center;
-            padding: 2rem 0 1.5rem 0;
-            border-bottom: 1px solid #1f2937;
+            padding: 1.5rem 0 1.5rem 0;
+            border-bottom: 2px solid #f1f5f9;
         }
         h1 {
             font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
         }
         .subhead {
             font-size: 1.2rem;
-            color: #9ca3af;
+            color: #475569;
             margin-top: 0.25rem;
+            font-weight: 500;
         }
         .location {
-            color: #6b7280;
+            color: #64748b;
             font-size: 0.95rem;
             margin-top: 0.3rem;
         }
         .badge {
             display: inline-block;
-            background: #1f2937;
-            color: #93c5fd;
-            padding: 0.2rem 1rem;
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 0.3rem 1.2rem;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-top: 0.5rem;
-            border: 1px solid #374151;
+            font-weight: 600;
+            border: 1px solid #c7d2fe;
         }
         /* Sections */
         .section {
@@ -63,22 +70,25 @@
             font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #1f2937;
+            border-bottom: 2px solid #f1f5f9;
             padding-bottom: 0.5rem;
-            color: #f3f4f6;
+            color: #0f172a;
         }
         .bio-card {
-            background: #1a1a1a;
+            background: #f8fafc;
             padding: 1.5rem 2rem;
             border-radius: 12px;
-            border-left: 4px solid #60a5fa;
+            border-left: 4px solid #2563eb;
         }
         .bio-card p {
             margin-bottom: 0.8rem;
-            color: #d1d5db;
+            color: #334155;
         }
         .bio-card p:last-child {
             margin-bottom: 0;
+        }
+        .bio-card strong {
+            color: #0f172a;
         }
         /* Skills */
         .skills-grid {
@@ -88,44 +98,46 @@
             margin-top: 0.5rem;
         }
         .skill-tag {
-            background: #1f2937;
-            color: #93c5fd;
+            background: #eef2ff;
+            color: #4338ca;
             padding: 0.4rem 1.2rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            border: 1px solid #374151;
+            font-weight: 500;
+            border: 1px solid #c7d2fe;
         }
         .skill-tag.soft {
-            color: #a7f3d0;
-            border-color: #065f46;
-            background: #064e3b;
+            color: #065f46;
+            border-color: #a7f3d0;
+            background: #d1fae5;
         }
         /* Projects */
         .project {
-            background: #1a1a1a;
+            background: #f8fafc;
             padding: 1.5rem 1.8rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
-            border: 1px solid #1f2937;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .project:hover {
             transform: translateY(-3px);
-            border-color: #60a5fa;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.08);
+            border-color: #93c5fd;
         }
         .project h3 {
-            color: #f3f4f6;
+            color: #0f172a;
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
         }
         .project .role {
-            color: #60a5fa;
+            color: #2563eb;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
         .project p {
-            color: #9ca3af;
+            color: #475569;
             font-size: 0.95rem;
             margin-bottom: 0.6rem;
         }
@@ -136,17 +148,17 @@
             margin-top: 0.4rem;
         }
         .project .tech span {
-            background: #111827;
+            background: #e2e8f0;
             padding: 0.2rem 0.8rem;
             border-radius: 12px;
             font-size: 0.75rem;
-            color: #60a5fa;
-            border: 1px solid #1f2937;
+            color: #1e293b;
+            font-weight: 500;
         }
         .project .highlights {
             margin-top: 0.6rem;
             padding-left: 1.2rem;
-            color: #d1d5db;
+            color: #334155;
             font-size: 0.9rem;
         }
         .project .highlights li {
@@ -155,31 +167,57 @@
         /* Project Images */
         .project-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
             margin-top: 1rem;
         }
         .project-images img {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid #1f2937;
+            border: 1px solid #e2e8f0;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
+            background: #f1f5f9;
         }
         .project-images img:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.15);
-            border-color: #60a5fa;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: #93c5fd;
         }
         .image-caption {
-            color: #6b7280;
-            font-size: 0.8rem;
+            color: #64748b;
+            font-size: 0.75rem;
             text-align: center;
             margin-top: 0.2rem;
         }
         .image-grid-3 {
             grid-template-columns: repeat(3, 1fr);
+        }
+        /* Education */
+        .edu-card {
+            background: #f8fafc;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #7c3aed;
+        }
+        .edu-card p {
+            color: #334155;
+        }
+        .edu-card strong {
+            color: #0f172a;
+        }
+        .edu-card ul {
+            padding-left: 1.2rem;
+            color: #334155;
+        }
+        .edu-card ul li {
+            margin-bottom: 0.2rem;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #f1f5f9;
+            margin: 0.8rem 0;
         }
         /* Contact */
         .contact {
@@ -189,30 +227,38 @@
             margin-top: 0.5rem;
         }
         .contact a {
-            color: #93c5fd;
+            color: #2563eb;
             text-decoration: none;
             font-weight: 500;
-            border-bottom: 1px dashed #374151;
+            border-bottom: 2px solid transparent;
             padding-bottom: 2px;
+            transition: border-color 0.2s ease;
         }
         .contact a:hover {
-            color: #60a5fa;
-            border-bottom-color: #60a5fa;
+            border-bottom-color: #2563eb;
         }
         .footer {
             margin-top: 3rem;
             padding-top: 1.5rem;
-            border-top: 1px solid #1f2937;
+            border-top: 2px solid #f1f5f9;
             text-align: center;
-            color: #6b7280;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            body { padding: 1.5rem 1rem; }
-            .project { padding: 1.2rem; }
-            .bio-card { padding: 1.2rem; }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .project {
+                padding: 1.2rem;
+            }
+            .bio-card {
+                padding: 1.2rem;
+            }
             .project-images {
                 grid-template-columns: 1fr;
             }
@@ -269,7 +315,8 @@
                 <span class="skill-tag">Database Design</span>
                 <span class="skill-tag">REST APIs</span>
             </div>
-            <h2 style="margin-top: 1.8rem;">🤝 Soft Skills</h2>
+
+            <h2 style="margin-top: 2rem;">🤝 Soft Skills</h2>
             <div class="skills-grid">
                 <span class="skill-tag soft">Team Player</span>
                 <span class="skill-tag soft">Problem-Solving</span>
@@ -292,7 +339,7 @@
                     predicts future trends, and provides actionable insights for law enforcement 
                     agencies in the Caraga region.
                 </p>
-                
+
                 <!-- IMAGES for Crime Dashboard -->
                 <div class="project-images image-grid-3">
                     <div>
@@ -311,7 +358,6 @@
                         <img src="crime-dashboard-4.png" alt="Crime Hotspot Analysis" onerror="this.style.display='none'"/>
                         <div class="image-caption">🔥 Crime Hotspot Analysis</div>
                     </div>
-                 
                 </div>
 
                 <div class="tech">
@@ -332,7 +378,7 @@
                     A web and mobile application designed to streamline attendance tracking 
                     for educational institutions, featuring real-time monitoring and automated reporting.
                 </p>
-                
+
                 <!-- IMAGES for Attendance System -->
                 <div class="project-images">
                     <div>
@@ -360,16 +406,16 @@
         <!-- ===== EDUCATION / CREDENTIALS ===== -->
         <section class="section">
             <h2>🎓 Education & Credentials</h2>
-            <div class="bio-card" style="border-left-color: #a78bfa;">
+            <div class="edu-card">
                 <p><strong>🎓 Master of Science in Information Technology</strong></p>
-                <p style="color: #9ca3af; font-size: 0.95rem;">
+                <p style="color: #475569; font-size: 0.95rem;">
                     Thesis: SIKOP STATISTICAL INTEGRATION AND KNOWLEDGE-BASED OPERATION PATROLLING OF CRIMES A CASE IN CARAGA REGION
                 </p>
-                <hr style="border-color: #1f2937; margin: 0.8rem 0;" />
+                <hr />
                 <p><strong>🏫 Current Roles:</strong></p>
-                <ul style="padding-left: 1.2rem; color: #d1d5db;">
+                <ul>
                     <li>DepEd Teacher — Senior High School</li>
-                    <li>Part-Time University IT Faculty — Web Dev and Mobile APp</li>
+                    <li>Part-Time University IT Faculty — Web Dev and Mobile App</li>
                 </ul>
             </div>
         </section>
@@ -380,7 +426,7 @@
             <div class="contact">
                 <a href="mailto:nimilliones@urios.edu.ph">✉️ nimilliones@urios.edu.ph</a>
                 <a href="https://github.com/nimilliones-wingman" target="_blank">🐙 GitHub</a>
-                <a href="https://www.facebook.com/wIngmAn1986" target="_blank">🔗 Faceboook</a>
+                <a href="https://www.facebook.com/wIngmAn1986" target="_blank">🔗 Facebook</a>
             </div>
         </section>
 
