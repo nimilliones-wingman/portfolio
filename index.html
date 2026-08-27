@@ -1,96 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Noel Milliones | Portfolio</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noel Milliones | Full-Stack Developer & IT Educator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background: #f4f4f4;
-            color: #222;
+            padding: 0;
+            box-sizing: border-box;
         }
-
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #eaeaea;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        /* Header / Hero */
         header {
-            background: #111;
-            color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 2rem 0 1.5rem 0;
+            border-bottom: 1px solid #1f2937;
         }
-
         h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
+        .subhead {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-top: 0.25rem;
         }
-
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
+        .location {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #1f2937;
+            color: #93c5fd;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #374151;
+        }
+        /* Sections */
+        .section {
+            margin: 2.8rem 0;
+        }
+        .section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #1f2937;
+            padding-bottom: 0.5rem;
+            color: #f3f4f6;
+        }
+        .bio-card {
+            background: #1a1a1a;
+            padding: 1.5rem 2rem;
             border-radius: 12px;
+            border-left: 4px solid #60a5fa;
         }
-
-        footer {
+        .bio-card p {
+            margin-bottom: 0.8rem;
+            color: #d1d5db;
+        }
+        .bio-card p:last-child {
+            margin-bottom: 0;
+        }
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+        .skill-tag {
+            background: #1f2937;
+            color: #93c5fd;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #374151;
+        }
+        .skill-tag.soft {
+            color: #a7f3d0;
+            border-color: #065f46;
+            background: #064e3b;
+        }
+        /* Projects */
+        .project {
+            background: #1a1a1a;
+            padding: 1.5rem 1.8rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #1f2937;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .project:hover {
+            transform: translateY(-3px);
+            border-color: #60a5fa;
+        }
+        .project h3 {
+            color: #f3f4f6;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .project .role {
+            color: #60a5fa;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .project p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+        .project .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+        }
+        .project .tech span {
+            background: #111827;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #60a5fa;
+            border: 1px solid #1f2937;
+        }
+        .project .highlights {
+            margin-top: 0.6rem;
+            padding-left: 1.2rem;
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+        .project .highlights li {
+            margin-bottom: 0.2rem;
+        }
+        /* Project Images */
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .project-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #1f2937;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        .project-images img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.15);
+            border-color: #60a5fa;
+        }
+        .image-caption {
+            color: #6b7280;
+            font-size: 0.8rem;
             text-align: center;
-            padding: 30px;
+            margin-top: 0.2rem;
+        }
+        .image-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        /* Contact */
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        .contact a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #374151;
+            padding-bottom: 2px;
+        }
+        .contact a:hover {
+            color: #60a5fa;
+            border-bottom-color: #60a5fa;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #1f2937;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            body { padding: 1.5rem 1rem; }
+            .project { padding: 1.2rem; }
+            .bio-card { padding: 1.2rem; }
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="container">
 
-<header>
-    <h1>Noel Milliones</h1>
-    <p>IT Educator • Developer • Technology Enthusiast</p>
-</header>
+        <!-- ===== HERO ===== -->
+        <header>
+            <h1>Noel Milliones</h1>
+            <p class="subhead">Full-Stack Developer · IT Educator · MSIT</p>
+            <p class="location">📍 Butuan City, Philippines</p>
+            <span class="badge">🔬 Master of Science in Information Technology</span>
+        </header>
 
-<main>
+        <!-- ===== ABOUT ===== -->
+        <section class="section">
+            <h2>👨‍💻 About Me</h2>
+            <div class="bio-card">
+                <p>
+                    I am a <strong>Full-Stack Developer</strong> and <strong>IT Educator</strong> holding a 
+                    Master of Science in Information Technology, featuring a comprehensive web development system 
+                    as my thesis centerpiece.
+                </p>
+                <p>
+                    Currently, I balance roles as a <strong>DepEd teacher</strong> and a part-time 
+                    <strong>University IT faculty</strong> member, blending academic theory with modern 
+                    software engineering practices. My dual experience in the classroom and the development 
+                    environment sharpens my ability to build clean, user-centric code while explaining complex 
+                    technical concepts with ease.
+                </p>
+                <p>
+                    I focus on developing impactful web applications and training the next generation of tech talent.
+                </p>
+            </div>
+        </section>
 
-    <section>
-        <h2>About Me</h2>
+        <!-- ===== SKILLS ===== -->
+        <section class="section">
+            <h2>🛠️ Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Mobile App Development</span>
+                <span class="skill-tag">Database Design</span>
+                <span class="skill-tag">REST APIs</span>
+            </div>
+            <h2 style="margin-top: 1.8rem;">🤝 Soft Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag soft">Team Player</span>
+                <span class="skill-tag soft">Problem-Solving</span>
+                <span class="skill-tag soft">Communication</span>
+                <span class="skill-tag soft">Teaching & Mentoring</span>
+                <span class="skill-tag soft">Adaptability</span>
+            </div>
+        </section>
 
-        <p>
-            Welcome to my personal portfolio website.
-            I am an IT educator and developer interested in
-            programming, web development, information technology,
-            and digital innovation.
-        </p>
-    </section>
+        <!-- ===== PROJECTS ===== -->
+        <section class="section">
+            <h2>📁 Featured Projects</h2>
 
-    <section>
-        <h2>Skills</h2>
+            <!-- Project 1: Crime Dashboard -->
+            <div class="project">
+                <h3>🔍 Caraga Crime Monitoring, Prediction & Forecasting</h3>
+                <div class="role">Full-Stack Developer & Data Analyst</div>
+                <p>
+                    A comprehensive crime analytics dashboard that visualizes crime patterns, 
+                    predicts future trends, and provides actionable insights for law enforcement 
+                    agencies in the Caraga region.
+                </p>
+                
+                <!-- IMAGES for Crime Dashboard -->
+                <div class="project-images image-grid-3">
+                    <div>
+                        <img src="crime-dashboard-1.png" alt="Crime Forecasting Dashboard" onerror="this.style.display='none'"/>
+                        <div class="image-caption">📊 Forecasting & Analytics</div>
+                    </div>
+                    <div>
+                        <img src="crime-dashboard-2.png" alt="Crime Access Scope" onerror="this.style.display='none'"/>
+                        <div class="image-caption">🔐 Access Scope & Permissions</div>
+                    </div>
+                    <div>
+                        <img src="crime-dashboard-3.png" alt="Caraga Demographic Map" onerror="this.style.display='none'"/>
+                        <div class="image-caption">🗺️ Caraga Demographic Map</div>
+                    </div>
+                    <div>
+                        <img src="crime-dashboard-4.png" alt="Crime Hotspot Analysis" onerror="this.style.display='none'"/>
+                        <div class="image-caption">🔥 Crime Hotspot Analysis</div>
+                    </div>
+                 
+                </div>
 
-        <ul>
-            <li>Python</li>
-            <li>PHP / Laravel</li>
-            <li>HTML / CSS / JavaScript</li>
-            <li>MySQL / PostgreSQL</li>
-            <li>Git and GitHub</li>
-        </ul>
-    </section>
+                <div class="tech">
+                    <span>Python</span>
+                    <span>React</span>
+                    <span>Data Visualization</span>
+                    <span>Machine Learning</span>
+                    <span>Google Cloud Platform</span>
+                    <span>PostgreSQL</span>
+                </div>
+            </div>
 
-    <section>
-        <h2>Projects</h2>
+            <!-- Project 2: Attendance System -->
+            <div class="project">
+                <h3>📚 Learner Attendance Monitoring System</h3>
+                <div class="role">Full-Stack Developer</div>
+                <p>
+                    A web and mobile application designed to streamline attendance tracking 
+                    for educational institutions, featuring real-time monitoring and automated reporting.
+                </p>
+                
+                <!-- IMAGES for Attendance System -->
+                <div class="project-images">
+                    <div>
+                        <img src="attendance-system-1.png" alt="Attendance System Dashboard" onerror="this.style.display='none'"/>
+                        <div class="image-caption">📱 Attendance System Interface</div>
+                    </div>
+                    <div>
+                        <img src="attendance-system-2.png" alt="Attendance System Mobile" onerror="this.style.display='none'"/>
+                        <div class="image-caption">📲 Mobile Application View</div>
+                    </div>
+                </div>
 
-        <p>
-            My projects will be added here.
-        </p>
-    </section>
+                <div class="tech">
+                    <span>React Native</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Express</span>
+                    <span>REST APIs</span>
+                    <span>JWT Auth</span>
+                </div>
+            </div>
 
-</main>
+        </section>
 
-<footer>
-    © 2026 Noel Milliones
-</footer>
+        <!-- ===== EDUCATION / CREDENTIALS ===== -->
+        <section class="section">
+            <h2>🎓 Education & Credentials</h2>
+            <div class="bio-card" style="border-left-color: #a78bfa;">
+                <p><strong>🎓 Master of Science in Information Technology</strong></p>
+                <p style="color: #9ca3af; font-size: 0.95rem;">
+                    Thesis: SIKOP STATISTICAL INTEGRATION AND KNOWLEDGE-BASED OPERATION PATROLLING OF CRIMES A CASE IN CARAGA REGION
+                </p>
+                <hr style="border-color: #1f2937; margin: 0.8rem 0;" />
+                <p><strong>🏫 Current Roles:</strong></p>
+                <ul style="padding-left: 1.2rem; color: #d1d5db;">
+                    <li>DepEd Teacher — Senior High School</li>
+                    <li>Part-Time University IT Faculty — Web Dev and Mobile APp</li>
+                </ul>
+            </div>
+        </section>
 
+        <!-- ===== CONTACT ===== -->
+        <section class="section">
+            <h2>📬 Let's Connect</h2>
+            <div class="contact">
+                <a href="mailto:nimilliones@urios.edu.ph">✉️ nimilliones@urios.edu.ph</a>
+                <a href="https://github.com/nimilliones-wingman" target="_blank">🐙 GitHub</a>
+                <a href="https://www.facebook.com/wIngmAn1986" target="_blank">🔗 Faceboook</a>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            &copy; 2026 Noel Milliones · Built with ❤️ · Full-Stack Developer &amp; IT Educator
+        </div>
+
+    </div>
 </body>
 </html>
